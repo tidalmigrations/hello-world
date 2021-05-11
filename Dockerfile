@@ -1,4 +1,4 @@
-FROM golang:alpine AS builder
+FROM --platform=$BUILDPLATFORM golang:alpine AS builder
 
 ADD main.go /
 RUN go build -o /app /main.go
